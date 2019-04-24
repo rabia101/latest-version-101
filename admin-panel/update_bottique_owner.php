@@ -16,14 +16,14 @@ if ($conn->connect_error) {
 $path_parts = pathinfo($_FILES["file_upload"]["name"]);
 $extension = $path_parts['extension'];
 
-$uploaddir = 'candidate_images/';
+$uploaddir = 'images/';
 
 $picture_name = $_FILES['file_upload']['name'];
 $picture_name = str_replace(" ","-",$picture_name);
 $picture_name = str_replace(".","-",$picture_name);
 $picture_name = $picture_name.".".$extension;
 
-if(move_uploaded_file($_FILES['file_upload']['tmp_name'], $uploaddir .basename($picture_name))){
+if(move_uploaded_file($_FILES['file_upload']['tmp_name'], "../".$uploaddir .basename($picture_name))){
     $sql = "UPDATE `bottiqueowner` "
          . " SET `image` = '".$uploaddir.$picture_name."' "
          . " WHERE `id` = '".$_REQUEST['id']."';";

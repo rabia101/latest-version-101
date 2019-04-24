@@ -38,7 +38,7 @@ if ($result->num_rows > 0) {
 ?>
     <div class="col-md-3">
         <?php echo $row["productname"]; ?><br>
-        <img height="100" width="100" src="http://localhost/rabia/<?php echo $row['image']; ?>">
+        <img height="100" width="100" src="http://localhost/front-site/<?php echo $row['image']; ?>">
         <br><br>
         <a href = "view_product.php?id=<?php echo $row["id"]; ?>" class="btn btn-default">Buy Now</a>
     </div>

@@ -37,7 +37,7 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
 ?>
     <div class="col-md-3">
-        <?php echo $row["name"]; ?><br><img height="100" width="100" src="http://localhost/rabia/<?php echo $row['image']; ?>">
+        <?php echo $row["name"]; ?><br><img height="100" width="100" src="http://localhost/front-site/<?php echo $row['image']; ?>">
     </div>
 
     <?php }
@@ -60,7 +60,7 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
 ?>
     <div class="col-md-3">
-        <?php echo $row["productname"]; ?><br><img height="100" width="100" src="http://localhost/rabia/<?php echo $row['image']; ?>">
+        <?php echo $row["productname"]; ?><br><img height="100" width="100" src="http://localhost/front-site/<?php echo $row['image']; ?>">
     </div>
 
     <?php }
