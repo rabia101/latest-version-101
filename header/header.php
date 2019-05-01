@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +21,7 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
   <div class="row">
-  <div class="col-md-10">
+  <div class="col-md-9">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">Online Boutiqe</a>
     </div>
@@ -28,9 +31,12 @@
     </ul>
 	
   </div>
-  <div class="col-md-2">
-  <a href ="register.php">register</a>&nbsp;|&nbsp;<a href ="login.php">login</a>
-  
+  <div class="col-md-3">
+  <?php if(isset( $_SESSION['customer'])){?>
+        <a href ="myaccount.php">Welcome( <?php echo  $_SESSION['customer']['customer_name'];?>)</a>&nbsp;|&nbsp;<a href ="logout.php">Logout</a>
+  <?php } else {?>
+        <a href ="register.php">register</a>&nbsp;|&nbsp;<a href ="login.php">login</a>
+  <?php } ?>
   </div>
   </div>
   </div>
