@@ -6,11 +6,11 @@ include "header/header.php";?>
    
     <div class = "form-group">
       <label for = "name">email</label>
-      <input type = "text" class = "form-control" name = "email" placeholder = "enter email">
+      <input type = "text" class = "form-control" name = "email" placeholder = "enter email" required="">
    </div>
    <div class = "form-group">
       <label for = "name">password</label>
-      <input type = "text" class = "form-control" name = "password" placeholder = "enter password">
+      <input type = "text" class = "form-control" name = "password" placeholder = "enter password" required="">
    </div>
    <button type = "submit" class = "btn btn-default">Submit</button>
 </form>

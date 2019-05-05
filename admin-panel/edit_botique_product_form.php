@@ -26,7 +26,7 @@ include "header/header.php";
 $sql = "SELECT * FROM `product` where id = '$id';";
 $result = $conn->query($sql);
 $row = $result->fetch_assoc();
-print_r($row);
+//print_r($row);
 ?>
  
 <div class = "container">
@@ -73,7 +73,7 @@ print_r($row);
 
 </div>
     <div class = "col-md-6" >
-        <img src="<?php echo $row['image']; ?>">
+        <img src="../<?php echo $row['image']; ?>">
     </div>
 </div>
 </div>

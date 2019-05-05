@@ -20,9 +20,27 @@ $sql = "DELETE FROM `bottiqueowner` WHERE `id` = '".$_REQUEST['id']."'";
 }
 
 ?>
+<?php if(isset($_REQUEST['message'])){
+    if($_REQUEST['message'] == "success"){
+    ?>
+<div class="row">
+    <div class="alert alert-success">
+        <?php echo $_REQUEST['text'];?>
+    </div>
+</div>
+    <?php }?>
+<?php if($_REQUEST['message'] == "error"){
+    ?>
+<div class="row">
+    <div class="alert alert-danger">
+        <?php echo $_REQUEST['text'];?>
+    </div>
+</div>
+    <?php }?>
+  <?php  } ?>
 <div class="row">
     <div class="col-md-12">
-        <h2>Boutiques</h2>
+        <h2>Online Boutiques</h2>
     </div>
 </div>
 <div class="row">
@@ -48,7 +66,7 @@ if ($result->num_rows > 0) {
 </div>
 <div class="row">
     <div class="col-md-12">
-        <h2>Products</h2>
+        <h2>Featured Products</h2>
     </div>
 </div>
 <div class="row">

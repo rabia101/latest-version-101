@@ -17,9 +17,9 @@ $result = $conn->query($sql);
 $row = $result->fetch_assoc();
 if(!empty($row['email'])){
         $_SESSION['customer'] = $row;
-	header("Location:index.php?message=success");
+	header("Location:index.php?message=success&text=Login successfuly");
 }else{
-	header("Location:index.php?message=error");
+	header("Location:index.php?message=error&text=Invalid  User/Password");
 }
 ?>
 
