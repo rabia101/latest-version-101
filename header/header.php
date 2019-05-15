@@ -1,7 +1,4 @@
-<?php
 
-
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -81,9 +78,9 @@
    <img src="http://localhost/front-site/assets/img/boutique.png" alt="boutique" width="10%"> <h1 class="w3-xxxlarge"><b>E-BOTIUQUE</b></h1>
     <h6>Welcome Online <span class="w3-tag">E-BOTIUQUE</span></h6>
     <div class="w3-bar w3-border">
-      <a href="#" class="w3-bar-item w3-button">Home</a>
-      <a href="#" class="w3-bar-item w3-button w3-light-grey">Login</a>
-      <a href="#" class="w3-bar-item w3-button">Register</a>
+      <a href="http://localhost/front-site/index.php" class="w3-bar-item w3-button">Home</a>
+      <a href="http://localhost/front-site/login.php" class="w3-bar-item w3-button w3-light-grey">Login</a>
+      <a href="http://localhost/front-site/register.php" class="w3-bar-item w3-button">Register</a>
      
     </div>
   </header>
