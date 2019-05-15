@@ -28,7 +28,7 @@ include "header/header.php";?>
           <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
         </div>
       </div>
-      <p>Mega Ripped Jeans<br><b>$19.99</b></p>
+      <p>Mega Ripped Jeans<br><b>$19.9</b></p>
     </div>
     <div class="w3-container">
       <img src="https://www.w3schools.com/w3images/jeans3.jpg" style="width:100%">
