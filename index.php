@@ -1,90 +1,69 @@
 <?php 
-include "header/header.php";
+include "header/header.php";?>
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "bottique";
+<br><br>
+<!-- Project Section -->
+<div class="w3-container w3-padding-32" id="projects">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Casuals</h3>
+  </div>
+<!-- Product grid -->
+<div class="w3-row w3-grayscale">
+  <div class="w3-col l3 s6">
+    <div class="w3-container">
+      <img src="https://www.w3schools.com/w3images/jeans1.jpg" style="width:100%">
+      <p>Ripped Skinny Jeans<br><b>$24.99</b></p>
+    </div>
+    <div class="w3-container">
+      <img src="https://www.w3schools.com/w3images/jeans2.jpg" style="width:100%">
+      <p>Mega Ripped Jeans<br><b>$19.99</b></p>
+    </div>
+  </div>
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
+  <div class="w3-col l3 s6">
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="https://www.w3schools.com/w3images/jeans2.jpg" style="width:100%">
+        <span class="w3-tag w3-display-topleft">New</span>
+        <div class="w3-display-middle w3-display-hover">
+          <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
+      <p>Mega Ripped Jeans<br><b>$19.99</b></p>
+    </div>
+    <div class="w3-container">
+      <img src="https://www.w3schools.com/w3images/jeans3.jpg" style="width:100%">
+      <p>Washed Skinny Jeans<br><b>$20.50</b></p>
+    </div>
+  </div>
 
-if(isset($_REQUEST['action'])){
-	//echo "i am there to delete";bottique_owner
-$sql = "DELETE FROM `bottiqueowner` WHERE `id` = '".$_REQUEST['id']."'";
-	$conn->query($sql);
-}
+  <div class="w3-col l3 s6">
+    <div class="w3-container">
+      <img src="https://www.w3schools.com/w3images/jeans3.jpg" style="width:100%">
+      <p>Washed Skinny Jeans<br><b>$20.50</b></p>
+    </div>
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="https://www.w3schools.com/w3images/jeans4.jpg" style="width:100%">
+        <span class="w3-tag w3-display-topleft">Sale</span>
+        <div class="w3-display-middle w3-display-hover">
+          <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
+      <p>Vintage Skinny Jeans<br><b class="w3-text-red">$14.99</b></p>
+    </div>
+  </div>
 
-?>
-<?php if(isset($_REQUEST['message'])){
-    if($_REQUEST['message'] == "success"){
-    ?>
-<div class="row">
-    <div class="alert alert-success">
-        <?php echo $_REQUEST['text'];?>
+  <div class="w3-col l3 s6">
+    <div class="w3-container">
+      <img src="https://www.w3schools.com/w3images/jeans4.jpg" style="width:100%">
+      <p>Vintage Skinny Jeans<br><b>$14.99</b></p>
     </div>
-</div>
-    <?php }?>
-<?php if($_REQUEST['message'] == "error"){
-    ?>
-<div class="row">
-    <div class="alert alert-danger">
-        <?php echo $_REQUEST['text'];?>
+    <div class="w3-container">
+      <img src="https://www.w3schools.com/w3images/jeans1.jpg" style="width:100%">
+      <p>Ripped Skinny Jeans<br><b>$24.99</b></p>
     </div>
+  </div>
 </div>
-    <?php }?>
-  <?php  } ?>
-<div class="row">
-    <div class="col-md-12">
-        <h2>Online Boutiques</h2>
-    </div>
-</div>
-<div class="row">
-    <hr>
-</div>
-<div class="row">
-<?php
-$sql = "SELECT * FROM `bottiqueowner` ";
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-?>
-    <div class="col-md-3">
-        <?php echo $row["name"]; ?><br>
-        <a href = "view_bottique_owner.php?id=<?php echo $row["id"]; ?>" class="btn btn-default">
-        <img height="100" width="100" src="http://localhost/rabia/<?php echo $row['image']; ?>">
-        </a>
-    </div>
 
-    <?php }
-}?>
-</div>
-<div class="row">
-    <div class="col-md-12">
-        <h2>Featured Products</h2>
-    </div>
-</div>
-<div class="row">
-    <hr>
-</div>
-<div class="row">
-<?php
-$sql = "SELECT * FROM `product` ";
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-?>
-    <div class="col-md-3">
-        <?php echo $row["productname"]; ?><br><img height="100" width="100" src="http://localhost/front-site/<?php echo $row['image']; ?>">
-    </div>
-    <a href = "view_bottique_owner.php?id=<?php echo $row["id"]; ?>" class="btn btn-default">view</a>
-
-    <?php }
-}?>
-</div>
+<?php 
+include "header/footer.php";
