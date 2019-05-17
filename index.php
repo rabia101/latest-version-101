@@ -1,64 +1,51 @@
 <?php
-include "header/header.php";?>
+
+require_once "db.php";
+include "header/header.php";
+
+if(isset($_SESSION['uid'])){
+    $d=$_SESSION['uid'];
+  print_r($d);
+  }
+    else{
+      echo "not set";
+    }
+?>
 <br><br>
 <!-- Project Section -->
 <div class="w3-container w3-padding-32" id="projects">
   <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Casuals</h3>
 </div>
 <!-- Product grid -->
-<div class="w3-row w3-grayscale">
-  <div class="w3-col l3 s6">
-    <div class="w3-container">
-      <img src="https://www.w3schools.com/w3images/jeans1.jpg" style="width:100%">
-      <p>Ripped Skinny Jeans<br><b>$24.99</b></p>
-    </div>
-    <div class="w3-container">
-      <img src="https://www.w3schools.com/w3images/jeans2.jpg" style="width:100%">
-      <p>Mega Ripped Jeans<br><b>$19.99</b></p>
-    </div>
-  </div>
+<div class="w3-row">
+<?php
+$sql = "SELECT * FROM `boutique_post`";
+$result = $conn->query($sql);
+if ($result->num_rows > 0):
+  while($row = $result->fetch_assoc()):
+    // output data of each row
+     
+?>
   <div class="w3-col l3 s6">
     <div class="w3-container">
       <div class="w3-display-container">
-        <img src="https://www.w3schools.com/w3images/jeans2.jpg" style="width:100%">
-        <span class="w3-tag w3-display-topleft">New</span>
+        <img src="http://localhost/front-site/assets/prd_images/<?=$row['prd_image']?>" style="width:100%">
+        <span class="w3-tag w3-display-topleft"></span>
         <div class="w3-display-middle w3-display-hover">
-          <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+          <button class="w3-button w3-black" id="<?=$row['id']?>">Buy now <i class="fa fa-shopping-cart"></i></button>
         </div>
       </div>
-      <p>Mega Ripped Jeans<br><b>$19.9</b></p>
+      <p><?=$row['prd_name']?><br><b>pkr <?=$row['prd_price']?></b></p>
+      <h6 class="w3-opacity">Quality <i class="w3-text-red fa-2x fa fa-pied-piper-alt" aria-hidden="true"></i>  <?=$row['prd_quality']?></h6>
+      <p class="w3-wide"><i class="fa w3-text-blue fa fa-reddit-alien" aria-hidden="true"></i> <?=$row['vendor_name']?></p>
+      <p class="w3-wide"><i class="fa w3-text-orange fa-location-arrow" aria-hidden="true"></i> <?=$row['vendor_city']?></p>
+        <p class="w3-wide w3-opacity"><i class="fa fa-phone w3-text-green" aria-hidden="true"></i> <?=$row['vendor_contact']?></p>
     </div>
-    <div class="w3-container">
-      <img src="https://www.w3schools.com/w3images/jeans3.jpg" style="width:100%">
-      <p>Washed Skinny Jeans<br><b>$20.50</b></p>
-    </div>
+    
+    
   </div>
-  <div class="w3-col l3 s6">
-    <div class="w3-container">
-      <img src="https://www.w3schools.com/w3images/jeans3.jpg" style="width:100%">
-      <p>Washed Skinny Jeans<br><b>$20.50</b></p>
-    </div>
-    <div class="w3-container">
-      <div class="w3-display-container">
-        <img src="https://www.w3schools.com/w3images/jeans4.jpg" style="width:100%">
-        <span class="w3-tag w3-display-topleft">Sale</span>
-        <div class="w3-display-middle w3-display-hover">
-          <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
-        </div>
-      </div>
-      <p>Vintage Skinny Jeans<br><b class="w3-text-red">$14.99</b></p>
-    </div>
-  </div>
-  <div class="w3-col l3 s6">
-    <div class="w3-container">
-      <img src="https://www.w3schools.com/w3images/jeans4.jpg" style="width:100%">
-      <p>Vintage Skinny Jeans<br><b>$14.99</b></p>
-    </div>
-    <div class="w3-container">
-      <img src="https://www.w3schools.com/w3images/jeans1.jpg" style="width:100%">
-      <p>Ripped Skinny Jeans<br><b>$24.99</b></p>
-    </div>
-  </div>
+  <?php endwhile; endif?>
+ 
 </div>
 <?php
 include "header/footer.php";

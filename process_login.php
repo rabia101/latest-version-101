@@ -10,7 +10,7 @@ if(!empty($row['email'])){
        $d=$_SESSION['uid'] = $row;
        
        if($d['type'] == "seller"){
-        header('location:vendor_panel/index.php');
+        header('location:vendor_panel/post.php');
     }else{
         header('location:user_panel/index.php');
     }
