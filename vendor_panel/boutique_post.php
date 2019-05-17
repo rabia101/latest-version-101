@@ -2,7 +2,7 @@
 
 require_once "../db.php";
 include "vendor_header.php";
-echo $d['id'];
+
 $sql = "SELECT * FROM `category` where `user_id`= '".$d['id']."'";
 $result = $conn->query($sql);
 if ($result->num_rows > 0):

@@ -30,8 +30,8 @@ if ($result->num_rows > 0):
       
         <h6 class="w3-opacity">From <i class="fa fa-dollar" aria-hidden="true"></i>  <?=$row['prd_price']?></h6>
         <h6 class="w3-opacity">Quality <i class="w3-text-red fa-2x fa fa-pied-piper-alt" aria-hidden="true"></i>  <?=$row['prd_quality']?></h6>
-        <p class="w3-wide"><i class="fa fa-location-arrow" aria-hidden="true"></i> <?=$row['vendor_city']?></p>
-        <p class="w3-wide w3-opacity"><i class="fa fa-phone" aria-hidden="true"></i> <?=$row['vendor_contact']?></p>
+        <p class="w3-wide"><i class="fa w3-text-orange fa-location-arrow" aria-hidden="true"></i> <?=$row['vendor_city']?></p>
+        <p class="w3-wide w3-opacity"><i class="fa fa-phone w3-text-green" aria-hidden="true"></i> <?=$row['vendor_contact']?></p>
         <p>Avail. <?=$row['prd_qty']?></p>
         
         <p><?=$row['prd_desc']?></p>

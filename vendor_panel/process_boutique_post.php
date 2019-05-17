@@ -16,7 +16,7 @@ require_once "../db.php";
  $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 $image_info = getimagesize($_FILES["prd_image"]["tmp_name"]);
-$image_info = getimagesize($target_file);
+//$image_info = getimagesize($target_file);
 $image_width = $image_info[0];
 $image_height = $image_info[1];
 
