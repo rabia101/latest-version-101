@@ -22,6 +22,7 @@ if ($result->num_rows > 0):
     <form action="process_boutique_post.php" method="POST" enctype="multipart/form-data">
       <p><input class="w3-input w3-padding-16 w3-border"  type="text" readonly="true" value="<?=$d['id']?>" id="user_id" name="vendor_id"></p>
       <p><input class="w3-input w3-padding-16 w3-border" type="text" readonly="true" value="<?=$d['customer_name']?>" id="vendor_name" name="vendor_name"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" readonly="true" value="<?=$d['mobile_number']?>" id="vendor_contact" name="vendor_contact"></p>
       <p><input class="w3-input w3-padding-16 w3-border" type="text" readonly="true" value="<?=$d['city']?>" id="vendor_city" name="vendor_city"></p>
       <p><div class="form-group">
         <label for="category_id">Select Category:</label>
