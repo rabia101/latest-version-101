@@ -1,11 +1,10 @@
-<?php 
+<?php
 include "header/header.php";?>
-
 <br><br>
 <!-- Project Section -->
 <div class="w3-container w3-padding-32" id="projects">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Casuals</h3>
-  </div>
+  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Casuals</h3>
+</div>
 <!-- Product grid -->
 <div class="w3-row w3-grayscale">
   <div class="w3-col l3 s6">
@@ -18,7 +17,6 @@ include "header/header.php";?>
       <p>Mega Ripped Jeans<br><b>$19.99</b></p>
     </div>
   </div>
-
   <div class="w3-col l3 s6">
     <div class="w3-container">
       <div class="w3-display-container">
@@ -35,7 +33,6 @@ include "header/header.php";?>
       <p>Washed Skinny Jeans<br><b>$20.50</b></p>
     </div>
   </div>
-
   <div class="w3-col l3 s6">
     <div class="w3-container">
       <img src="https://www.w3schools.com/w3images/jeans3.jpg" style="width:100%">
@@ -52,7 +49,6 @@ include "header/header.php";?>
       <p>Vintage Skinny Jeans<br><b class="w3-text-red">$14.99</b></p>
     </div>
   </div>
-
   <div class="w3-col l3 s6">
     <div class="w3-container">
       <img src="https://www.w3schools.com/w3images/jeans4.jpg" style="width:100%">
@@ -64,6 +60,5 @@ include "header/header.php";?>
     </div>
   </div>
 </div>
-
-<?php 
+<?php
 include "header/footer.php";
