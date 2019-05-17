@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -50,11 +51,11 @@
         </div>
         
         <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
-          <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>Lawn</a>
-          <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-shirtsinbulk fa-fw"></i>Casuals</a>
-          <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cart-plus fa-fw"></i>Cart</a>
-          <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Overview</a>
-          <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-diamond fa-fw"></i>  Orders</a>
+          <!-- <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>Lawn</a>
+          <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-shirtsinbulk fa-fw"></i>Casuals</a> -->
+          <a href="http://localhost/front-site/user_panel/index.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cart-plus fa-fw"></i>Cart</a>
+          <!-- <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Overview</a> -->
+          <a href="http://localhost/front-site/user_panel/index.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-diamond fa-fw"></i>  Orders</a>
           
         </div>
         <a href="#footer" class="w3-bar-item w3-button w3-padding">Contact</a>
@@ -73,8 +74,30 @@
           <h6>Welcome Online <span class="w3-tag">E-BOTIUQUE</span></h6>
           <div class="w3-bar w3-border">
             <a href="http://localhost/front-site/index.php" class="w3-bar-item w3-button">Home</a>
-            <a href="http://localhost/front-site/login.php" class="w3-bar-item w3-button w3-light-grey">Login</a>
+            <?php
+            
+                  if(isset($_SESSION['uid'])){
+                    $d=$_SESSION['uid'];
+                    echo '
+                    <a href="http://localhost/front-site/signout.php" class="w3-bar-item w3-button"><i class="fa fa-sign-out"></i> signout</a>
+                   
+                    ';
+                    if($d["type"]=="user")
+                          {
+                           echo '<a href="http://localhost/front-site/user_panel/index.php" class="w3-bar-item w3-button"><i class="fa fa-gear"></i> Profile</a>';
+                          }
+                          else
+                          {
+                            echo '<a href="http://localhost/front-site/vendor_panel/index.php" class="w3-bar-item w3-button"><img src="http://localhost/front-site/assets/dataimg/'.$d["image"].'"class="rounded-circle" alt="Cinque Terre" width="30px" height="30px"> Profile</a>';
+                          }
+                  }else{
+                    echo '
+                    <a href="http://localhost/front-site/login.php" class="w3-bar-item w3-button w3-light-grey">Login</a>
             <a href="http://localhost/front-site/register.php" class="w3-bar-item w3-button">Register</a>
+                    ';
+                  }
+              ?>
+            
             
           </div>
         </header>
