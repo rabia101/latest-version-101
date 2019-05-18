@@ -11,12 +11,16 @@ if(isset($_SESSION['uid']))
         if($d['type']=="user"){
             ?>
          
-            <div class="card" style="font-family:Inconsolata">
+            <div class="card" style="font-family:Georgia">
         <div class="card-header"> <i class="fa fa-cart-plus fa-2x" aria-hidden="true"> <strong>Confirm Order</strong></i> </div>
         <div class="card-body">
-          <form name="form1" action="process_register.php" role="form"  method="post" class="was-validated" enctype="multipart/form-data">
-            <div class="row">
-            
+          <form name="form1" action="cart_process.php" role="form"  method="post" class="was-validated" enctype="multipart/form-data">
+            <div class="row row w3-padding-64">
+            <div class="w3-container w3-amber w3-center w3-hover-orange"
+   style="bottom:10%;opacity:0.7;width:100%;">
+  <h2>USER Detail</h2>
+</div>
+            <hr>
             </div>
             <div class="row">
               <div class="col-sm-6" style="">
@@ -33,7 +37,7 @@ if(isset($_SESSION['uid']))
                 </div>
                 <div class="form-group">
                   <label for="address">Address:</label>
-                  <textarea class="form-control" rows="3" cols="25"  name="address" required id="address">value="<?=$d['address']?>"</textarea>
+                  <textarea class="form-control" rows="3" cols="25"  name="address" required id="address">"<?=$d['address']?>"</textarea>
                   <div class="valid-feedback">Valid.</div>
                   <div class="invalid-feedback">Please fill out this field.</div>
                 </div>
@@ -60,6 +64,13 @@ if(isset($_SESSION['uid']))
                 
               </div>
             </div>
+            <div class="row w3-padding-64">
+            <div class="w3-container w3-blue w3-center w3-hover-orange"
+   style="bottom:10%;opacity:0.7;width:100%;">
+  <h2><address>Product Detail</address></h2>
+</div>
+            <hr>
+            </div>
             <div class="row">
             
             <?php 
@@ -78,6 +89,7 @@ if(isset($_SESSION['uid']))
                 <div class="form-group">
                   <label for="pwd">Seller City</label>
                   <input type="text" class="form-control" readonly="true" value="<?=$row['vendor_city'];?>" id="vendor_city" name="vendor_city" required>
+                 
                   <input type="hidden" class="form-control" value="<?=$row['vendor_id'];?>" id="vendor_id" name="vendor_id" required>
                   <div class="valid-feedback">Valid.</div>
                   <div class="invalid-feedback">Please fill out this field.</div>
@@ -113,12 +125,7 @@ if(isset($_SESSION['uid']))
               <div class="col-sm-6">
               
                 
-              <div class="form-group">
-                  <label for="type">Price:</label>
-                  <input type="text" class="form-control" readonly="true" value="<?=$row['prd_price'];?>" id="prd_price" name="prd_price" required>
-                  <div class="valid-feedback">Valid.</div>
-                  <div class="invalid-feedback">Please fill out this field.</div>
-                </div>
+              
                 <div class="form-group">
                   <label for="type">Quality</label>
                   <input type="text" class="form-control" readonly="true" value="<?=$row['prd_quality'];?>" id="prd_quality" name="prd_quality" required>
@@ -139,14 +146,14 @@ if(isset($_SESSION['uid']))
               </div>
               <div class="col-sm-6">
               <div class="form-group">
-                  <label for="address">Product Desc.:</label>
-                  <textarea class="form-control" rows="3" cols="25" readonly="true"  name="address" required id="address">value="<?=$row['prd_desc'];?>"</textarea>
+                  <label for="prd_desc">Product Desc.:</label>
+                  <textarea class="form-control" rows="3" cols="25" readonly="true"  name="prd_desc" required id="prd_desc"><?=$row['prd_desc'];?>"</textarea>
                   <div class="valid-feedback">Valid.</div>
                   <div class="invalid-feedback">Please fill out this field.</div>
                 </div>
 
                  <div class="form-group">
-                  <label for="type">Seller Contact</label>
+                  <label for="vendor_contact">Seller Contact</label>
                   <input type="text" class="form-control" readonly="true" value="<?=$row['vendor_contact'];?>" id="vendor_contact" name="vendor_contact" required>
                   <div class="valid-feedback">Valid.</div>
                   <div class="invalid-feedback">Please fill out this field.</div>
