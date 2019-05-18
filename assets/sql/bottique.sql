@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 17, 2019 at 11:20 AM
+-- Generation Time: May 18, 2019 at 05:48 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.4
 
@@ -71,6 +71,42 @@ INSERT INTO `boutique_order` (`orderid`, `bo_id`, `customerid`, `amount`, `date`
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `boutique_post`
+--
+
+CREATE TABLE `boutique_post` (
+  `id` int(11) NOT NULL,
+  `vendor_id` int(11) NOT NULL,
+  `vendor_name` varchar(50) NOT NULL,
+  `vendor_city` varchar(50) NOT NULL,
+  `category_id` int(11) NOT NULL,
+  `category_name` varchar(50) NOT NULL,
+  `prd_name` varchar(100) NOT NULL,
+  `prd_image` varchar(100) NOT NULL,
+  `prd_qty` int(11) NOT NULL,
+  `prd_price` int(11) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `prd_desc` text,
+  `prd_quality` varchar(50) DEFAULT NULL,
+  `vendor_contact` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `boutique_post`
+--
+
+INSERT INTO `boutique_post` (`id`, `vendor_id`, `vendor_name`, `vendor_city`, `category_id`, `category_name`, `prd_name`, `prd_image`, `prd_qty`, `prd_price`, `date`, `prd_desc`, `prd_quality`, `vendor_contact`) VALUES
+(6, 1259, 'Musawer ALi', 'Bahawalpur', 7, '', 'Leather Shoes (Orignal)', '031-Shoes-to-wear-with-jeans.jpeg', 100, 2999, '2019-05-17 12:25:39', 'Upper Leather,\r\nRubber Sole,\r\nSIze:41 to 45', 'Upper Leather', '+923336513516'),
+(7, 1259, 'Musawer ALi', 'Bahawalpur', 5, '', 'Blue Jeans', '13a5e9eee22ce15319cd14c9f28e582d.jpg', 200, 999, '2019-05-17 12:30:46', '4 seasons\r\ntwo colors\r\n32 to 45 waste', 'Fiber Cotton', '+923336513516'),
+(13, 1259, 'Musawer ALi', 'Bahawalpur', 3, '', 'Ladies Stritching Cloth', 'maria-salman-collection.jpg', 200, 3999, '2019-05-17 13:08:38', '4 Season,Good Quality,\r\nAge 21 to 28', 'Maria Sulman Washing ware', '+92333651351'),
+(14, 1259, 'Musawer ALi', 'Bahawalpur', 3, '', 'Ladies Stritching Cloth', 'classic-vol1-collection.jpg', 20, 2999, '2019-05-17 13:10:44', '4 Season', 'Washingware (Summer)', '+92333651351'),
+(15, 1259, 'Musawer ALi', 'Bahawalpur', 5, '', 'Men Jeans', 'menscomingsoonpage-edit.jpg', 80, 1999, '2019-05-17 13:13:10', 'Orignal Dennim Branded', 'Dennim', '923336513516'),
+(16, 1260, 'Ch Musawer', 'Bahawalpur', 8, '', 'Pary suites', 'clothing.jpg', 50, 9999, '2019-05-17 14:57:49', 'Party Suites Branded', 'Tom Tailor', '923336513516'),
+(17, 1260, 'Ch Musawer', 'Bahawalpur', 9, '', 't-shirts', 'FI015-1920x1080-t-shirts-en.jpg', 1000, 399, '2019-05-17 14:59:18', 'Available All Colors\r\nGood Quality', 'Denim', '923336513516');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `category`
 --
 
@@ -92,7 +128,10 @@ INSERT INTO `category` (`id`, `category_name`, `image`, `user_id`, `user_type`) 
 (3, 'Lawn', NULL, 1259, 'seller'),
 (4, 'Radimate', NULL, 1260, 'seller'),
 (5, 'Jeans', NULL, 1259, 'seller'),
-(6, 'Radimate', NULL, 1259, 'seller');
+(6, 'Radimate', NULL, 1259, 'seller'),
+(7, 'shoes', NULL, 1259, 'seller'),
+(8, 'court', NULL, 1260, 'seller'),
+(9, 'shirts', NULL, 1260, 'seller');
 
 -- --------------------------------------------------------
 
@@ -119,8 +158,8 @@ CREATE TABLE `customer` (
 
 INSERT INTO `customer` (`id`, `customer_name`, `cnic`, `address`, `mobile_number`, `email`, `password`, `image`, `type`, `city`) VALUES
 (1253, 'rabia is beautiful', '31202-70111746-4', '189/f', '03009687669', 'rabia100789@gmail.com', '03057799830', 'candidate_images/Chrysanthemum-jpg.jpg', 'user', NULL),
-(1259, 'Musawer ALi', '3120269441941', 'pak jali house, Near Shama Canima Multan Road Bahawalpur', '+92333651351', 'pakjalihouse@yahoo.com', 'admin123', '36252369.jpeg', 'seller', 'Bahawalpur'),
-(1260, 'Ch Musawer', '3120269441941', 'pak jali house, Near Shama Canima Multan Road Bahawalpur', '+92333651351', 'pakjalihouse@gmail.com', 'admin123', '79c2689a332e9946ade72debd15b45eb.jpg', 'seller', 'Bahawalpur');
+(1259, 'Musawer ALi', '3120269441941', 'pak jali house, Near Shama Canima Multan Road Bahawalpur', '923336513516', 'pakjalihouse@yahoo.com', 'admin123', '36252369.jpeg', 'seller', 'Bahawalpur'),
+(1260, 'Ch Musawer', '3120269441941', 'pak jali house, Near Shama Canima Multan Road Bahawalpur', '923336513516', 'pakjalihouse@gmail.com', 'admin123', '79c2689a332e9946ade72debd15b45eb.jpg', 'seller', 'Bahawalpur');
 
 -- --------------------------------------------------------
 
@@ -230,6 +269,12 @@ ALTER TABLE `boutique_order`
   ADD PRIMARY KEY (`orderid`);
 
 --
+-- Indexes for table `boutique_post`
+--
+ALTER TABLE `boutique_post`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `category`
 --
 ALTER TABLE `category`
@@ -276,10 +321,16 @@ ALTER TABLE `boutique_order`
   MODIFY `orderid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `boutique_post`
+--
+ALTER TABLE `boutique_post`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `customer`
