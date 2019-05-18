@@ -1,9 +1,9 @@
 
 <?php
 
-require_once "../db.php";
+
 include "vendor_header.php";
-echo $d['id'];
+require_once "../db.php";
 
 ?>
  <!-- Header -->

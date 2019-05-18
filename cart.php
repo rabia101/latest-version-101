@@ -2,7 +2,7 @@
 session_start();
 require_once 'db.php';
 $prd_id=$_REQUEST['id'];
-
+$prd_img=$_REQUEST['prd_img'];
   
 
 if(isset($_SESSION['uid']))
@@ -15,6 +15,7 @@ if(isset($_SESSION['uid']))
         <div class="card-header"> <i class="fa fa-cart-plus fa-2x" aria-hidden="true"> <strong>Confirm Order</strong></i> </div>
         <div class="card-body">
           <form name="form1" action="cart_process.php" role="form"  method="post" class="was-validated" enctype="multipart/form-data">
+          <input type="hidden"  name="prd_img" id="prd_img" value="<?= $prd_img; ?>">
             <div class="row row w3-padding-64">
             <div class="w3-container w3-amber w3-center w3-hover-orange"
    style="bottom:10%;opacity:0.7;width:100%;">

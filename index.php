@@ -29,10 +29,11 @@ if ($result->num_rows > 0):
   <div class="w3-col l3 s6">
     <div class="w3-container">
       <div class="w3-display-container">
+      <input type="hidden" class="prd_img" name="prd_img" id="prd_img" value="<?=$row['prd_image']?>">
         <img src="http://localhost/front-site/assets/prd_images/<?=$row['prd_image']?>" style="width:100%">
         <span class="w3-tag w3-display-topleft"></span>
         <div class="w3-display-middle w3-display-hover">
-          <button class="w3-button w3-black btn_cart" id="<?=$row['id']?>">Buy now <i class="fa fa-shopping-cart"></i></button>
+          <button class="w3-button w3-black btn_cart" img="<?=$row['prd_image']?>"  id="<?=$row['id']?>">Buy now <i class="fa fa-shopping-cart"></i></button>
         </div>
       </div>
       <p><?=$row['prd_name']?><br><b>pkr <?=$row['prd_price']?></b></p>
@@ -47,9 +48,7 @@ if ($result->num_rows > 0):
   <?php endwhile; endif?>
  
 </div>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-    Open modal
-  </button>
+
 <!-- The Modal -->
 <div  class="modal fade " id="Modal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-scrollable">
@@ -80,10 +79,12 @@ if ($result->num_rows > 0):
  $(document).ready(function(){
   $('.btn_cart').click(function(){
     var id = $(this).attr('id');
+    var prd_img = $(this).attr('img');
+   
     $.ajax({
                 url: "http://localhost/front-site/cart.php",
                 method: "POST",
-                data: {id:id},
+                data: {id:id,prd_img:prd_img},
                 success: function(data)
                 {
                 
