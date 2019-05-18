@@ -32,7 +32,7 @@ if ($result->num_rows > 0):
         <img src="http://localhost/front-site/assets/prd_images/<?=$row['prd_image']?>" style="width:100%">
         <span class="w3-tag w3-display-topleft"></span>
         <div class="w3-display-middle w3-display-hover">
-          <button class="w3-button w3-black" id="<?=$row['id']?>">Buy now <i class="fa fa-shopping-cart"></i></button>
+          <button class="w3-button w3-black btn_cart" id="<?=$row['id']?>">Buy now <i class="fa fa-shopping-cart"></i></button>
         </div>
       </div>
       <p><?=$row['prd_name']?><br><b>pkr <?=$row['prd_price']?></b></p>
@@ -47,5 +47,57 @@ if ($result->num_rows > 0):
   <?php endwhile; endif?>
  
 </div>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Open modal
+  </button>
+<!-- The Modal -->
+<div  class="modal fade " id="Modal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h1 class="modal-title">Modal Heading</h1>
+          <button type="button" class="close" data-dismiss="modal">×</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+        <div id="result">
+
+          </div>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+<script>
+ $(document).ready(function(){
+  $('.btn_cart').click(function(){
+    var id = $(this).attr('id');
+    $.ajax({
+                url: "http://localhost/front-site/cart.php",
+                method: "POST",
+                data: {id:id},
+                success: function(data)
+                {
+                
+                $('#result').html(data);
+                // Display the Bootstrap modal
+                $('#Modal').modal('show');
+                }
+        });
+  });
+   
+ });
+</script>
+
+
+
 <?php
 include "header/footer.php";
