@@ -20,7 +20,7 @@ $d=$_SESSION['uid'];
 
 <div class="w3-row-padding">
 <?php
-$sql = "SELECT * FROM `cart` where `user_id`= '".$d['id']."'";
+$sql = "SELECT * FROM `cart` where `user_id`= '".$d['id']."' order by `id` DESC";
 $result = $conn->query($sql);
 if ($result->num_rows > 0):
   while($row = $result->fetch_assoc()):

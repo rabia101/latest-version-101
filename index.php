@@ -19,7 +19,7 @@ if(isset($_SESSION['uid'])){
 <!-- Product grid -->
 <div class="w3-row">
 <?php
-$sql = "SELECT * FROM `boutique_post`";
+$sql = "SELECT * FROM `boutique_post` order by `id` DESC";
 $result = $conn->query($sql);
 if ($result->num_rows > 0):
   while($row = $result->fetch_assoc()):

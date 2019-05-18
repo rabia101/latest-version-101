@@ -16,7 +16,7 @@ require_once "../db.php";
 
 <div class="w3-row-padding">
 <?php
-$sql = "SELECT * FROM `boutique_post` where `vendor_id`= '".$d['id']."'";
+$sql = "SELECT * FROM `boutique_post` where `vendor_id`= '".$d['id']."' order by `id` DESC";
 $result = $conn->query($sql);
 if ($result->num_rows > 0):
   while($row = $result->fetch_assoc()):
