@@ -52,6 +52,7 @@
         </div>
         
         <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
+          
           <!-- <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>Lawn</a>
           <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-shirtsinbulk fa-fw"></i>Casuals</a> -->
           <a href="http://localhost/front-site/user_panel/index.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cart-plus fa-fw"></i>Cart</a>
@@ -85,7 +86,7 @@
                     ';
                     if($d["type"]=="user")
                           {
-                           echo '<a href="http://localhost/front-site/user_panel/index.php" class="w3-bar-item w3-button"><i class="fa fa-gear"></i> Profile</a>';
+                            echo '<a href="http://localhost/front-site/user_panel/index.php" class="w3-bar-item w3-button"><img src="http://localhost/front-site/assets/dataimg/'.$d["image"].'"class="rounded-circle" alt="Cinque Terre" width="30px" height="30px"> Profile</a>';
                           }
                           else
                           {

@@ -12,8 +12,8 @@ $d=$_SESSION['uid'];
 
 <!-- Header -->
 <div class="w3-container" style="margin-top:80px" id="showcase">
-    <h1 class="w3-jumbo"><b>Products</b></h1>
-    <h1 class="w3-xxxlarge w3-text-red"><b>Posts</b></h1>
+    <h1 class="w3-jumbo"><b>Cart</b></h1>
+    <h1 class="w3-xxxlarge w3-text-red"><b>Items</b></h1>
     <hr style="width:50px;border:5px solid red" class="w3-round">
   </div>
 <!-- First Photo Grid-->
@@ -32,9 +32,9 @@ if ($result->num_rows > 0):
       <div class="w3-container w3-white">
       <h3><b><?= $row['prd_name']?></b></h3>
         <div class="w3-container w3-border">
-        <h6 class="w3-opacity">Price <i class="fa fa-dollar" aria-hidden="true"></i>  <?=$row['prd_price']?></h6>
-        <h6 class="w3-opacity">Quantity <?=$row['prd_qty']?></h6>
-        <h6 class="w3-opacity w3-text-red">Total: <?=$row['total']?></h6>
+        <h6 class="w3-opacity w3-red">Price <i class="fa fa-dollar" aria-hidden="true"></i>  <?=$row['prd_price']?></h6>
+        <h6 class="w3-opacity w3-teal">Quantity <?=$row['prd_qty']?></h6>
+        <h6 class=" w3-black w3-text-red">Total:  <?=$row['total']?> Rs</h6>
        </div>
        
         <p class=""><i class="fa w3-text-orange fa-location-arrow" aria-hidden="true"></i> <?=$row['address']?></p>

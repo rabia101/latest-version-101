@@ -5,10 +5,10 @@ include "header/header.php";
 
 if(isset($_SESSION['uid'])){
     $d=$_SESSION['uid'];
-  print_r($d);
+ 
   }
     else{
-      echo "not set";
+      echo "<marquee><span class='w3-red w3-wide'>Notice! You are Not Login. You are Visitor </span></marquee>";
     }
 ?>
 <br><br>

@@ -52,10 +52,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <div class="w3-bar-block">
     <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
 
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  Views</a>
-    
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-diamond fa-fw"></i>  Orders</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cart-plus fa-fw"></i>  cart</a>
+  <a href="index.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cart-plus fa-fw"></i>  cart</a>
     <br><br>
   </div>
 </nav>
@@ -68,7 +65,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <div class="w3-main" style="margin-left:300px;margin-top:43px;">
     <?php
         $d=$_SESSION['uid'];
-        echo $d['customer_name'];
+       
         
         
    } else {
