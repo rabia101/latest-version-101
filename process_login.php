@@ -11,7 +11,12 @@ if(!empty($row['email'])){
        
        if($d['type'] == "seller"){
         header('location:vendor_panel/post.php');
-    }else{
+    }
+    elseif($d['type'] == "admin"){
+        header('location:admin_panel/index.php');
+    }
+    else{
+        
         header('location:user_panel/index.php');
     }
 }else{
