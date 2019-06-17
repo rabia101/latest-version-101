@@ -76,7 +76,7 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
             {
                 if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
                 
-                    $sql = "INSERT INTO customer (customer_name,city, cnic, email,address,mobile_number,image,password,type)
+                    $sql = "INSERT INTO register (customer_name,city, cnic, email,address,mobile_number,image,password,type)
             VALUES ('$fullname', '$city','$cnic', '$email','$address','$contact','$image','$password','$type')";
 
             if ($conn->query($sql) === TRUE){
@@ -87,8 +87,7 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
                     'id'=>$id,
                     'type'=>$type,
                     'image'=>$image,
-                    'city'=>$city 
-                );
+                    'city'=>$city,                );
                 if($d['type'] == "seller"){
                     header('location:vendor_panel/index.php');
                 }else{

@@ -12,7 +12,7 @@ if ($result->num_rows > 0):
 <!-- Contact/Area Container -->
 <div class="w3-container" id="where" style="padding-bottom:32px;">
   <div class="w3-content" style="max-width:700px">
-    <h3 class="w3-center w3-padding-48" style=" font-family:Inconsolata"><span class="w3-tag w3-wide">Post Your Product Here!</span></h3>
+    <h3 class="w3-center w3-padding-48" style=" font-family:Inconsolata"><span class="w3-tag w3-wide">Add Your Product Information</span></h3>
     
     <img src="http://localhost/front-site/assets/img/img.jpg" class="w3-image" style="width:100%">
     <hr class="w3-red">

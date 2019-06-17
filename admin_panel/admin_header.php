@@ -50,11 +50,11 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <h5>Dashboard</h5>
   </div>
   <div class="w3-bar-block">
-    <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-gray w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
 
-    <a href="seller_detail.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>   Seller Detail</a>
-    <a href="user_detail.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-address-book fa-fw"></i>User Detail</a>
-
+    <a href="seller_detail.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>   Bottique Owner Detail</a>
+    <a href="user_detail.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-address-book fa-fw"></i>Customer Detail</a>
+    <a href="order_detail.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-address-book fa-fw"></i>Order Detail</a>
     
  
   </div>

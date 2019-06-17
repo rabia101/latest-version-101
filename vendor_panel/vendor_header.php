@@ -52,11 +52,11 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <div class="w3-bar-block">
     <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
 
-    <a href="post.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  Views Posts</a>
+    <a href="post.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  Views Products</a>
     <a href="category.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-address-book fa-fw"></i> category</a>
-    <a href="boutique_post.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullseye fa-fw"></i> Boutuque Post</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-diamond fa-fw"></i>  Orders</a>
+    <a href="boutique_post.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullseye fa-fw"></i> Add New Product</a>
     
+    <a href="order_detail.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-address-book fa-fw"></i>Order Detail</a>
  
   </div>
 </nav>

@@ -11,7 +11,7 @@ $d=$_SESSION['uid'];
 ?>
 <!-- Header -->
 <div class="w3-container" style="margin-top:80px" id="showcase">
-    <h1 class="w3-jumbo"><b>Seller</b></h1>
+    <h1 class="w3-jumbo"><b>Bottique</b></h1>
     <h1 class="w3-xxxlarge w3-text-red"><b>Detail</b></h1>
     <hr style="width:50px;border:5px solid red" class="w3-round">
   </div>
@@ -38,7 +38,7 @@ $d=$_SESSION['uid'];
     <tbody id="myTable">
       
     <?php
-$sql = "SELECT * FROM `boutique_post`  order by `id` DESC";
+$sql = "SELECT * FROM `customer` WHERE type = 'seller'  order by `id` DESC";
 $result = $conn->query($sql);
 if ($result->num_rows > 0):
   while($row = $result->fetch_assoc()):
@@ -47,16 +47,16 @@ if ($result->num_rows > 0):
 ?>
    
       <tr>
-        <td><?=$row['vendor_id']?></td>
-        <td><?=$row['vendor_name']?></td>
-        <td><?=$row['vendor_contact']?></td>
-        <td><?=$row['vendor_city']?></td>
-        <td><?=$row['prd_name']?></td>
-        <td><?=$row['prd_quality']?></td>
-        <td><?=$row['prd_qty']?></td>
-        <td><?=$row['prd_price']?></td>
-        <td><?=$row['prd_qty']*$row['prd_price']?></td>
-        <td><?=$row['date']?></td>
+        <td><?=$row['id']?></td>
+        <td><?=$row['customer_name']?></td>
+        <td><?=$row['cnic']?></td>
+        <td><?=$row['address']?></td>
+        <td><?=$row['mobile_number']?></td>
+        <td><?=$row['email']?></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
 
       </tr>
   <?php endwhile;endif;?>

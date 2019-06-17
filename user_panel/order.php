@@ -14,7 +14,7 @@ $d=$_SESSION['uid'];
 <div class="w3-container" style="margin-top:80px" id="showcase">
     <div class="row">
         <div class="col-md-4">
-            <h1 class="w3-jumbo"><b>Products</b></h1>
+            <h1 class="w3-jumbo"><b>My Order</b></h1>
             <h1 class="w3-xxxlarge w3-text-red"><b>Items</b></h1>
             <hr style="width:50px;border:5px solid red" class="w3-round">
         </div>

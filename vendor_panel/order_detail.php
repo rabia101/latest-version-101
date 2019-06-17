@@ -1,6 +1,6 @@
 <?php 
 
-include "admin_header.php";
+include "vendor_header.php";
 require_once "../db.php";
    
 $d=$_SESSION['uid'];
@@ -11,27 +11,27 @@ $d=$_SESSION['uid'];
 ?>
 <!-- Header -->
 <div class="w3-container" style="margin-top:80px" id="showcase">
-    <h1 class="w3-jumbo"><b>Customer</b></h1>
+    <h1 class="w3-jumbo"><b>Order </b></h1>
     <h1 class="w3-xxxlarge w3-text-red"><b>Detail</b></h1>
     <hr style="width:50px;border:5px solid red" class="w3-round">
-     
-   </div>
+  </div>
 <div class="container mt-3">
 <h2>Custom Search</h2>
-
   <p>Type something in the input field</p>  <input class="form-control" id="myInput" type="text" placeholder="Search..">
   <br>
   <table class="table table-bordered w3-responsive" id="Table">
-    
     <thead>
       <tr>
-      <th>User id</th>
+      <th>Order ID</th>
         
-        <th>Name</th>
-        <th>Cont#</th>
+        <th>Customer Name</th>
+        <th>Product</th>
         <th>Address</th>
         <th> City</th>
-        <th>email</th>
+        <th>Qty</th>
+        <th>Price</th>
+        <th></th>
+        <th></th>
         <th class="w3-text-red"></th>
         <th></th>
       </tr>
@@ -39,7 +39,7 @@ $d=$_SESSION['uid'];
     <tbody id="myTable">
       
     <?php
-$sql = "SELECT * FROM `customer` where  type = 'user'  order by `id` DESC";
+echo $sql = "SELECT * FROM `cart` where  vendor_id = '".$d['id']."' order by `id` DESC";
 $result = $conn->query($sql);
 if ($result->num_rows > 0):
   while($row = $result->fetch_assoc()):
@@ -50,11 +50,15 @@ if ($result->num_rows > 0):
       <tr>
       <td><?=$row['id']?></td>
         <td><?=$row['customer_name']?></td>
-        <td><?=$row['cnic']?></td>
+        <td><?=$row['prd_name']?></td>
         <td><?=$row['address']?></td>
-        <td><?=$row['mobile_number']?></td>
-        <td><?=$row['email']?></td>
-        
+        <td><?=$row['vendor_city']?></td>
+        <td><?=$row['prd_qty']?></td>
+        <td><?=$row['prd_price']?></td>
+        <td></td>
+        <td></td>
+        <td></td>
+
       </tr>
   <?php endwhile;endif;?>
     </tbody>

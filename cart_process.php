@@ -17,8 +17,36 @@ $prd_image    =   $_REQUEST['prd_img'];
  $vendor_contact    =   $_REQUEST['vendor_contact'];
  $total     =   $prd_qty*$prd_price;
 
- $sql = "INSERT INTO cart (user_id,vendor_id,prd_image, customer_name,user_cnic, address,user_contact,prd_name,vendor_city,prd_price,prd_quality,prd_qty,prd_desc,vendor_contact,total)
-            VALUES ('$user_id', '$vendor_id','$prd_image','$customer_name', '$user_cnic','$user_address','$user_contact','$prd_name','$vendor_city','$prd_price','$prd_quality','$prd_qty','$prd_desc','$vendor_contact','$total')";
+ $sql = "INSERT INTO cart (user_id,
+     vendor_id,
+     prd_image, 
+     customer_name,
+     user_cnic, 
+     address,
+     user_contact,
+     prd_name,
+     vendor_city,
+     prd_price,
+     prd_quality,
+     prd_qty,
+     prd_desc,
+     vendor_contact,
+     total)
+            VALUES ('$user_id',"
+         . " '$vendor_id',"
+         . "'$prd_image',"
+         . "'$customer_name', "
+         . "'$user_cnic',"
+         . "'$user_address',"
+         . "'$user_contact',"
+         . "'$prd_name',"
+         . "'$vendor_city',"
+         . "'$prd_price',"
+         . "'$prd_quality',"
+         . "'$prd_qty',"
+         . "'$prd_desc',"
+         . "'$vendor_contact',"
+         . "'$total')";
 
 if ($conn->query($sql) === TRUE){
     

@@ -13,6 +13,7 @@ include "header/login_header.php";?>
   </div>
   <button type = "submit" class = "btn btn-default">Submit</button>
 </form> -->
+
 <!-- Header -->
 <header class="w3-display-container w3-content w3-hide-small" style="max-width:1500px">
   <img class="w3-image" src="http://localhost/front-site/assets/img/lo2.jpg" alt="London" width="1500" height="700">
@@ -24,6 +25,7 @@ include "header/login_header.php";?>
     
     </script>
     <!-- Tabs -->
+    
     <div id="login" class="w3-container  w3-opacity-min w3-white w3-padding-16 myLink">
       <h3 class="w3-center">Login</h3>
       <form action="process_login.php" method="POST" name="form1">
@@ -36,6 +38,15 @@ include "header/login_header.php";?>
             <label>Password</label>
             <input class="w3-input w3-border" name="password" type="password" placeholder="********">
           </div>
+            <div class="w3-half">
+            <label>User Type</label>
+            <select class="form-control"name="user type" >         
+        <option value="customer">customer</option>
+         <option value="bowner">bowner</option>
+          <option value="admin">admin</option>
+    </select>
+            
+          
         </div>
         <p class="w3-padding-16"><button type="submit" class="w3-button w3-dark-grey">Login</button></p>
       </form>
